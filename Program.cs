@@ -2,9 +2,17 @@
 using System.Collections.Specialized;
 
 // Test config file
-string? sAttr;
-sAttr = ConfigurationManager.AppSettings.Get("connectionString");
-Console.WriteLine("The value of Key0 is " + sAttr);
+ConnectionStringSettingsCollection settings = ConfigurationManager.ConnectionStrings;
+
+if (settings != null)
+{
+    foreach (ConnectionStringSettings cs in settings)
+    {
+        Console.WriteLine(cs.Name);
+        Console.WriteLine(cs.ProviderName);
+        Console.WriteLine(cs.ConnectionString);
+    }
+}
 
 NameValueCollection sAll;
 sAll = ConfigurationManager.AppSettings;

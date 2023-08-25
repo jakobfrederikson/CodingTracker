@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CodingTracker;
+﻿namespace CodingTracker.Model;
 
 internal class CodingSessionModel
 {
@@ -13,5 +7,5 @@ internal class CodingSessionModel
     // All DateTime(s) will be converted to string when put into db
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
-    public DateTime Duration { get; set; }
+    public TimeSpan Duration => EndTime - StartTime;
 }
