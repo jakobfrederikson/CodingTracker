@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Collections.Specialized;
+using CodingTracker.ConsoleUI;
 
 // Test config file
 ConnectionStringSettingsCollection settings = ConfigurationManager.ConnectionStrings;
@@ -21,3 +22,6 @@ foreach (string s in sAll.AllKeys)
     Console.WriteLine("Key: " + s + " Value: " + sAll.Get(s));
 
 Console.ReadLine();
+
+MainMenu mainMenu = new MainMenu();
+mainMenu.DisplayMainMenu();
